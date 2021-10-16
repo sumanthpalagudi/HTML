@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Media Quaries</title>
+        <style>
+            body{background-color:blanchedalmond; text-align: center;}
+            @media screen and (min-width:600px) {
+                body{background-color:black;}
+                .hader{color:white}
+            }
+            @media (max-device-height:600px) {
+                body{background-color:rebeccapurple;} 
+            }
+            @media screen and (orientation:landscape){
+                .hader{float: left;}
+            }
+            @media  screen and(orientation:portrait) {
+                .hader{float:right;}
+            }
+            @media (max-color:4){
+                body{background-image:none;}
+            }
+            @media all and (color-index){
+                body{background-image:url(https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg);}
+            }
+            @media (max-color-index:255){
+                .alert{
+                    display: block;
+                }
+            }
+            @media (grid){
+                img{display: none;}
+            }
+            @media print {
+                body{background-color:white;
+                color:black};
+            }
+            @media projection {
+                body{background-image:none;}
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="hader">Resize the browser window to see the effect!</h1>
+    </body>
+</html>

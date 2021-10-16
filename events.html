@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Events</title>
+    </head>
+    <body>
+        <script>
+            function clickMe(){
+                document.getElementById("print").innerHTML="Hello all Wellcome";
+            }
+            function TouchMe(){
+                document.getElementById("mouse").style.backgroundColor="gray";
+            }
+            function dontTouch(){
+                document.getElementById("mouse").style.backgroundColor="white";
+            }
+            function inputType(){
+                document.getElementById("input1").style.backgroundColor="yellow";
+            }
+            function inputAway(){
+                document.getElementById("input1").style.backgroundColor="white";
+            }
+            function formSubs(){
+                document.getElementById("display").innerHTML=document.getElementById("input1").value;
+            }
+            window.onresize=resizeOf;
+            window.onload=resizeOf;
+            function resizeOf(){
+                myWidth=window.innerWidth;
+                myHeight=window.innerHeight;
+                document.getElementById("demo").innerHTML=myWidth+"x"+myHeight;
+            }
+        </script>
+        <div id="mouse">
+        <h1>Mouse events</h1>
+        <form>
+            <p>Click the button to the event</p>
+            <input type="button" onclick="clickMe()" value="Click me">
+        </form>
+        <p id="print" onmouseover="TouchMe()" onmouseout="dontTouch()"></p>
+    </div>
+    <div>
+        <h1>Form Events</h1>
+            <form>
+            <input type="text" onfocus="inputType()" id="input1" onblur="inputAway()">
+            <input type="submit" onsubmit="formSubs()" value="Submit">
+            <p id="display"></p>
+        </form>
+    </div>
+    <div>
+        <h1>window events</h1>
+        <p id="demo"></p>
+    </div>
+    </body>
+</html>

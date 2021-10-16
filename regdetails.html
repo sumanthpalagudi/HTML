@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Registration details</title>
+    </head>
+    <body>
+        <script>
+            var db=openDatabase("Store","1.0","Book Store",2*1024*1024);
+            db.transaction(function(tx){
+                tx.executeSql('select * from USER',[],function(tx,results){
+                    var len=results.rows.length,i;
+                    var str='';
+                    for(i=0;i<len;i++){
+                        str+="<tr>";
+                        str+="<td>"+results.rows.item(i).fname+"</td>";
+                        str+="<td>"+results.rows.item(i).lname+"</td>";
+                        str+="<td>"+results.rows.item(i).usr+"</td>";
+                        str+="</tr>";
+                        document.getElementById("tblGrid").innerHTML+=str;
+                        str='';
+                    }
+                },null);
+            });
+        </script>
+        <table id="tblGrid" cellpadding="10px" cellspacing="0" border="1">    
+            <tr style="background-color:black;color:white;font-size:18px;">    
+                <td>    
+                    First Name
+                </td>    
+                <td>    
+                    Last Name    
+                </td>    
+                <td>    
+                    UserName    
+                </td>    
+            </tr>    
+        </table>    
+    </body>
+</html>

@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <title></title>
+ </head>
+ <body>
+ <div align="center" style="width:29%;float:left;border:1px solid black">
+   	<form style="padding:10px">
+   		
+   		<input type="Text" name="usr" id="usr" placeholder="Username" style="padding:3px">
+   		<br><br>
+   		<input type="Password" name="pwd" id="pwd" placeholder="Password">
+   		<br><br>
+   		<a href="usrdetials.html"><input type="button" name="Sign in" value="Sign in" onclick="save()"></a><br>
+   		<h4>NEW User</h4>
+   		<input type="button" name="Sign up" value="Sign up">
+   	</form>
+   </div>
+   <script type="text/javascript">
+      function save(){
+         var Username=document.getElementById("usr").value;
+         var Password=document.getElementById("pwd").value;
+         localStorage.setItem("Username",Username);
+         localStorage.setItem("Password",Password);
+         sessionStorage.setItem("Username",Username);
+         sessionStorage.setItem("Password",Password);
+         
+      }
+   </script>
+</body>
+ </html>

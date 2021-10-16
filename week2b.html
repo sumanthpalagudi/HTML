@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration form</title>
+    </head>
+    <body>
+        <div align='center'>
+        <div style="width:50%;border:1px solid black;padding:10px;background-color:#F7F2E0">
+            <form name="regForm">
+                <label for="fname">First Name</label>
+                <input type="Text" name="name" id="fname" placeholder="First name" required>
+                <br><br>
+                <label for="lname">Last Name</label>
+                <input type="Text" name="name" id="lname" placeholder="Last name" required>
+                <br><br>
+                <label for="usr">Username</label>
+                <input type="Text" name="usr" id="usr" placeholder="Username" required><br><br>
+                <label for="add">Address</label>
+                <input type="Text" name="add" id="add" placeholder="Address" style="width:300px" required><br><br>
+                <label for="pin">Postal Code</label>
+                <input type="Text" name="pin" id="pin" placeholder="Postal Code" required><br><br>
+                <label for="phone">Mobile No</label>
+                <input type="text" name="phone" id="phone" placeholder="Mobile No" required><br><br>
+                <a href="regdetails.html"><input type="button" id="Create" name="Create" value="Create" onclick="save()"></a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+       function save() {
+            var fsname=document.getElementById("fname").value;
+            var lsname=document.getElementById("lname").value;
+            var user=document.getElementById("usr").value;
+            var adds=document.getElementById("add").value;
+            var pins=document.getElementById("pin").value;
+            var phones=document.getElementById("phone").value;
+
+               var db=openDatabase("Store","1.0","Book Store",2*1024*1024);
+               db.transaction(function(tx){
+                   tx.executeSql('CREATE TABLE IF NOT EXISTS USER(fname text,lname text,usr text)');
+                   tx.executeSql("INSERT INTO USER(fname,lname,usr) values(?,?,?)",[fsname,lsname,user])
+               });
+   
+           }
+   
+       </script>
+    </body>
+</html>

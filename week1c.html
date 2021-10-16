@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week 1c</title>
+	<style type="text/css">
+		body img{object-fit: fill}
+	</style>
+	
+</head>
+<body style="background-image:url('https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80')">
+<h1 style="text-align: center;">Create An Account</h1>
+ <div align="center">
+ 	<div style="width:50%;border:1px solid black;padding:10px;background-color:#F7F2E0">
+ 		<form>
+ 			<label for="fname">First Name</label>
+ 			<input type="Text" name="name" id="fname" placeholder="First name">
+ 			<br><br>
+ 			<label for="lname">Last Name</label>
+ 			<input type="Text" name="name" id="lname" placeholder="Last name">
+ 			<br><br>
+ 			<b>Gender</b>
+ 			<input type="radio" name="Gender" id="male" value="Male">
+ 			<label for="male">Male</label>
+ 			<input type="radio" name="Gender" id="female" value="Female">
+ 			<label for="female">Female</label>
+ 			<input type="radio" name="Gender" id="other" value="Others">
+ 			<label for="other">Others</label><br><br>
+ 			<label for="DOB">Date Of Birth</label>
+ 			<input type="date" name="begin" id="DOB" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31"><br><br>
+ 			<label for="usr">Username</label>
+ 			<input type="Text" name="usr" id="usr" placeholder="Username"><br><br>
+ 			<label for="pwd">Password</label>
+ 			<input type="Password" name="pwd" id="pwd" placeholder="Password"><br><br>
+ 			<label for="cpwd">Confirm Password</label>
+ 			<input type="Password" name="cpwd" id="cpwd" placeholder="Confirm Password"><br><br>
+ 			<label for="add">Address</label>
+ 			<input type="Text" name="add" id="add" placeholder="Address" style="width:300px"><br><br>
+ 			<label for="pin">Postal Code</label>
+ 			<input type="Text" name="pin" id="pin" placeholder="Postal Code"><br><br>
+ 			<label for="phone">Mobile No</label>
+ 			<input type="text" name="phone" id="phone" placeholder="Mobile No"><br><br>
+ 			<label for="mail"> Email-Id</label>
+ 			<input type="mail" name="mail" id="mail" placeholder=" Email-Id"><br><br>
+ 			<a href="week1b.html"><input type="button" id="Create" name="Create" value="Create" onclick="save()"></a>
+ 		</form>
+ 	</div>
+ </div>
+ <script type="text/javascript">
+	function save() {
+		if(typeof(Storage)==="undefind")
+			alert("No local Storage");
+		else if(window.openDatabase){
+			var db=openDatabase("Store","1.0","Book Store",20000);
+			db.transaction(function(tx){
+				tx.executeSql("CREATE TABLE USER(fname text,lname text,usr text,add text,pin text,phone text,email mail)",[],
+					function(tx){
+						alert("user table created");
+					});
+			});
+			db.transaction(function(tx){
+				tx.executeSql("INSERT INTO USER(fname,lname,usr,pwd,cpwd,add,pin,phone,email) values(?,?,?)",[fname,lname,usr],
+				function(tx,result){
+					alert("record created");
+				});
+			});
+
+		}
+		else
+				alert("unable to open webSql database");
+	}
+
+	</script>
+</body>
+</html>

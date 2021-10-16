@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            input[type="button"]{
+                color: black;
+                border: solid black 2px;
+                width:50px
+            }
+            input{border:1px solid black;}
+            form{
+                background-color: darkslategrey;
+                padding: 20px;
+            }
+            h1{
+                width:20%;
+                background-color: darkslategrey;
+                color: floralwhite;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <h1>calculator</h1>
+            <div style="width:20%;">
+                <form>
+                    <input type="text" id="feild"style="width:210px;height:20px " placeholder="0"><br>
+                    <input type="button" id="AC" value="AC" onclick="clr()">
+                    <input type="button" id="convert" value="+/-" onclick="convert()">
+                    <input type="button" id="modulo" value="%" onclick="dis('%')">
+                    <input type="button" id="divid" value="&divide;" onclick="dis('/')"><br>
+                    <input type="button" value="7" onclick="dis('7')">
+                    <input type="button" value="8" onclick="dis('8')">
+                    <input type="button" value="9" onclick="dis('9')">
+                    <input type="button" value="X" onclick="dis('*')"><br>
+                    <input type="button" value="4" onclick="dis('4')">
+                    <input type="button" value="5" onclick="dis('5')">
+                    <input type="button" value="6" onclick="dis('6')">
+                    <input type="button" value="-" onclick="dis('-')"><br>
+                    <input type="button" value="1" onclick="dis('1')">
+                    <input type="button" value="2" onclick="dis('2')">
+                    <input type="button" value="3" onclick="dis('3')">
+                    <input type="button" value="+" onclick="dis('+')"><br>
+                    <input type="button" value="0" onclick="dis('0')" style="width:104px;">
+                    <input type="button" value="." onclick="dis('.')">
+                    <input type="button" value="=" onclick="solve()">
+
+                </form>
+            </div>
+        </div>
+        <script>
+            function dis(val){
+                document.getElementById("feild").value+=val
+            }
+            function solve(){
+                let x=document.getElementById("feild").value
+                let y=eval(x)
+                document.getElementById("feild").value=y
+            }
+            function convert(){
+                
+            }
+            function clr()
+         {
+             document.getElementById("feild").value = ""
+         }
+        </script>
+    </body>
+</html>

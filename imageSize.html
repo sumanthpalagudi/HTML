@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Reduce Size the image</title>
+        <style>
+
+            @media screen {
+              body{background-color: rgb(181, 142, 185);}  
+              .hader{color: floralwhite;}
+            }
+            @media screen and (min-width:700px){
+                body{background-color: darkorchid;}
+                .hader{color: gold;}
+            }
+            @media screen and (min-width:1000px){
+                body{background-color: darkviolet ;}
+                .hader{color: lightsalmon;}
+            }
+            @media screen and (max-width:1500px){
+                #image{width:50%;height:50%;margin-top:10%;}
+            }
+            @media screen and (max-width:577px){
+                #image{float: left;}
+            }
+            @media screen and (min-width:1200px){
+                #iamge{float:right;}
+            }
+        </style>
+    </head>
+    <body align='center'>
+        <h1 class="hader">Resize the browser window to see the effect!</h1>
+        <img src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" id="image">
+    </body>
+</html>

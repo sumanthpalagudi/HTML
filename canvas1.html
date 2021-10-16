@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moving ball</title>
+
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500" style="border:1px solid black"></canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("myCanvas")
+		var c=canvas.getContext("2d");
+		canvas.style.background = "skyblue";
+		c.fillRect(400,200,100,200);
+		c.beginPath();
+		c.fillStyle="#FF5733";
+		c.arc(50,50,40,0,2*Math.PI);
+		c.stroke();
+		c.fillStyle="#FF5733";
+		c.fill();
+		c.fillRect(200,200,100,200);
+		c.fillStyle="#2ECC71";
+		c.fill();
+		c.fillRect(300,200,100,200);
+		c.fillStyle="#FF8000";
+		c.fillRect(100,200,100,200);
+		c.fillStyle="#FFFF00";
+		c.fillRect(0,200,100,200);
+		c.fillStyle="#FFFFFF"
+		c.font="80px Arial";
+		c.fillText("Welcome",0,200);
+		c.font="80px Arial";
+		c.fillText("To Everyone",0,480);
+
+	</script>
+
+</body>
+</html>
