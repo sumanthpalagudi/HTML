@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Imange Maps</title>
+    </head>
+    <body>
+        <!-- <script>
+            // function showCoords(event) {
+            //     var x = event.clientX;
+            //     var y = event.clientY;
+            //     var coords = "X coords: " + x + ", Y coords: " + y;
+            //     document.getElementById("demo").innerHTML = coords;
+            // }
+        </script> -->
+        <h1>Image Maps</h1>
+        <p>Click on the items that are avilable in the image for more information</p>
+        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/april-fools-pranks-1616097584.jpg" alt="prank" usemap="#prank" width="70%" height="50%" >
+        <!-- onclick="showCoords(event)" -->
+        <map name="prank">
+            <area shape="rect" coords="478,131,622,522" alt="pineapple" href="pineapple.html" >
+            <area shape="circle" coords="362,206,44" alt="paper fan" href="paperfan.html">
+            <area shape="rect" coords="333,321,423,491" alt="plantpot" href="plantpot.html">
+            <area shape="poly" coords="424,374,480,349,485,410,451,436" href="wateringcan.html"
+        </map>
+        <p id="demo"></p>
+    </body>
+</html>
