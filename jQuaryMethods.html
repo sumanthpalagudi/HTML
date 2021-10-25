@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>JQuaries using methods</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="tab1" align="center" style="padding:10px;">
+            <h1 >click me to see the Content</h1>
+            <div id="insidetab" style="width:80%;" align="left">
+                <h2>Form</h2>
+                <label for="name">Enter your name:</label>
+                <input type="text" name="name" id="name"><br>
+                <label>Keypressed:<span id="msg-key"></span></label><br>
+                <label>CountOfLetters:<span id="msg-count"></span></label>
+            </div>
+            <p id="size">Size of the window:<span></span></p>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#tab1").mouseenter(function(){
+                    $(this).css("background-color","#585858");
+                    $("#tab1 h1").css("color","white");
+                });
+            });
+            $("#insidetab").hide();
+            $(document).ready(function(){
+                $("h1").click(function(){
+                    $("#insidetab").show();
+                    $("#insidetab").css("background-color","white");
+                });
+            });
+            i=0;
+            $(document).ready(function(){
+                $("#name").keyup(function(event){
+                    $("#msg-key").html(+ event.keyCode);
+                })
+                $("#name").keypress(function () {
+                    $("#msg-count").text(i +=1);
+                });
+            });
+            $(document).ready(function(){
+                $("#name").focus(function () {
+                    $(this).css("background-color","green");
+                    $(this).css("color","white");
+                })
+                $("#name").blur(function () {
+                    $(this).css("background-color","white");
+                    $(this).css("color","black");
+                });
+            });
+            $(document).ready(function() {
+                $(window).resize(function() {
+                    $("#size span").text(i+=1);
+                })
+                $(window).scroll(function () {
+                    alert("Can't scroll down");
+                })
+            })
+            
+        </script>
+    </body>
+</html>
